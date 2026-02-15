@@ -2,7 +2,7 @@
   home.stateVersion = "25.11";
 
   #Packages
-  home.packages = with pkgs; [nodejs python3 R];
+  home.packages = with pkgs; [nodejs python3 R gemini-cli];
   
   #VIM config
   programs.vim = {
