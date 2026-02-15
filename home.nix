@@ -3,6 +3,10 @@
 
   #Packages
   home.packages = with pkgs; [nodejs python3 R gemini-cli htop];
+  home.sessionVariables = {
+    GIT_EDITOR = "vim";
+    GEMINI_API_KEY = builtins.readFile ./api/GEMINI_API_KEY;
+  };
   
   #VIM config
   programs.vim = {

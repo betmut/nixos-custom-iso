@@ -41,6 +41,11 @@
     };
   };
 
+  #Environment Variables
+  environment.variables = {
+    EDITOR = "vim";
+  };
+  
   # Optional: Add useful tools
   environment.systemPackages = with pkgs; [
     tmux 
