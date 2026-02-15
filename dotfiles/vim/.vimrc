@@ -34,6 +34,7 @@ set nocompatible              " be iMproved, required
 			set timeoutlen=500     " For mapped sequences (normal mode)
 			set ttimeout           " Enable timeout for key codes (insert mode)
 			set ttimeoutlen=10     " Lower = faster escape from Insert mode
+            set termguicolors
 			colorscheme gruvbox
             "colorscheme desert
 

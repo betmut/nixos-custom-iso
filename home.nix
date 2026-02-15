@@ -1,5 +1,8 @@
 {pkgs, ... }: {
   home.stateVersion = "25.11";
+
+  #Packages
+  home.packages = with pkgs; [nodejs ];
   
   #VIM config
   programs.vim = {
@@ -7,14 +10,14 @@
     plugins = with pkgs.vimPlugins; 
       [
         vim-fugitive
-        gruvbox
         vim-airline
         vim-airline-themes
         vim-airline-clock
-        nerdtree
         vim-slime
-        coc-nvim
         vim-racket
+        gruvbox
+        nerdtree
+        coc-nvim
         Vundle-vim
 
         #coc plugins

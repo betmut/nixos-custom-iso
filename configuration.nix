@@ -28,6 +28,7 @@
           
           # Optional: Add useful tools
           environment.systemPackages = with pkgs; [ 
+            tree
             blueman
             git 
             vim 
