@@ -31,13 +31,12 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       nerd-fonts.hasklug
+      ubuntu-classic
     ];
     
     fontconfig = {
       defaultFonts = {
-        serif = [];
-        sansSerif = [];
-        monospace = [];
+        monospace = ["Hasklug Nerd Font" "Ubuntu Mono"];
       };
     };
   };
