@@ -8,6 +8,9 @@
             isNormalUser = true;
           };
 
+          #Enable facetimehd
+          hardware.facetimehd.enable = true;
+
           # Allow proprietary software (Required for Broadcom)
           nixpkgs.config = {
             allowUnfree = true;
@@ -25,6 +28,7 @@
           
           # Optional: Add useful tools
           environment.systemPackages = with pkgs; [ 
+            blueman
             git 
             vim 
             pciutils # Useful for 'lspci'
