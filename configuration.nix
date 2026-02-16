@@ -8,6 +8,8 @@
   users.users.nixos = {
     shell = pkgs.zsh;
     isNormalUser = true;
+    extraGroups = ["wheel"];
+    initialPassword = "";
     };
 
   #Enable facetimehd
