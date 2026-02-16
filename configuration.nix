@@ -1,5 +1,7 @@
 {config, pkgs, modulesPath, lib, ... }: {
-  imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" ];
+
+  system.stateVersion = "25.11";
+  #imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" ];
 
   #Zsh Shell
   programs.zsh.enable = true;

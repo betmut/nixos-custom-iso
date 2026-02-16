@@ -38,7 +38,7 @@
 
     packages.x86_64-linux.vbox = nixos-generators.nixosGenerate {
       system = "x86_64-linux";
-      format = "vbox";
+      format = "virtualbox";
       modules = sharedModules ++ [
         ({pkgs, ...}:{virtualisation.virtualbox.guest.enable = true;})
       ];
