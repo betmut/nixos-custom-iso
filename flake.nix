@@ -15,18 +15,32 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-generators, home-manager, ... }: {
+  outputs = { self, nixpkgs, nixos-generators, home-manager, ... }: 
+  let
+    sharedModules = [
+      ./configuration.nix
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          users.nixos = ./home.nix;
+          };
+      }
+    ];
+  in
+  {
     packages.x86_64-linux.iso = nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "install-iso";
-      modules = [
-        ./configuration.nix
-        home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nixos = ./home.nix;
-          }
+      modules = sharedModules;
+    };
+
+    packages.x86_64-linux.vbox = nixos-generators.nixosGenerate {
+      system = "x86_64-linux";
+      format = "vbox";
+      modules = sharedModules ++ [
+        ({pkgs, ...}:{virtualisation.virtualbox.guest.enable = true;})
       ];
     };
   };
