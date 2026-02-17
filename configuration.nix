@@ -14,6 +14,7 @@
 
   #Enable facetimehd
   hardware.facetimehd.enable = true;
+  hardware.enableRedistributableFirmware = true;
 
   # Allow proprietary software (Required for Broadcom)
   nixpkgs.config = {
@@ -22,10 +23,13 @@
   };
 
   # Support for Broadcom BCM4360
-  boot.initrd.kernelModules = [ "wl" ];
-  boot.kernelModules = [ "wl" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-
+  boot = {
+    initrd.kernelModules = [ "wl" ];
+    kernelModules = [ "wl" ];
+    extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+    blacklistedKernelModules = [ "b43" "bcma" ];
+  };
+  
   # Networking
   networking.networkmanager.enable = true;
   networking.wireless.enable = lib.mkForce false; # Use NM instead for easier CLI setup
