@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-generators, home-manager, ... }: 
+  outputs = inputs@{ self, nixpkgs, ... }: 
   let
     sharedModules = [
       ./configuration.nix
@@ -30,15 +30,17 @@
     ];
   in
   {
-    packages.x86_64-linux.iso = nixos-generators.nixosGenerate {
+    packages.x86_64-linux.iso = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "install-iso";
+      specialArgs = {inherit inputs;};
       modules = sharedModules;
     };
 
-    packages.x86_64-linux.vbox = nixos-generators.nixosGenerate {
+    packages.x86_64-linux.vbox = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "virtualbox";
+      specialArgs = {inherit inputs;};
       modules = sharedModules ++ [
         ({pkgs, ...}:{virtualisation.virtualbox.guest.enable = true;})
       ];

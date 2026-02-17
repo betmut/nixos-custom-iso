@@ -1,4 +1,4 @@
-{config, pkgs, modulesPath, lib, ... }: {
+{config, pkgs, lib, ... }: {
 
   system.stateVersion = "25.11";
   #imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" ];
