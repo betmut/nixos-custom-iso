@@ -26,7 +26,6 @@
     initrd.kernelModules = [ "wl" ];
     kernelModules = [ "wl" ];
     extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-    #blacklistedKernelModules = [ "b43" "bcma" ];
   };
   
   # Networking
