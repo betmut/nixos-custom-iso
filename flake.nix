@@ -19,7 +19,7 @@
   let
     sharedModules = [
       ./configuration.nix
-      home-manager.nixosModules.home-manager
+      inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;
@@ -33,17 +33,20 @@
     packages.x86_64-linux.iso = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "install-iso";
-      specialArgs = {inherit inputs;};
       modules = sharedModules;
     };
 
     packages.x86_64-linux.vbox = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "virtualbox";
-      specialArgs = {inherit inputs;};
       modules = sharedModules ++ [
         ({pkgs, ...}:{virtualisation.virtualbox.guest.enable = true;})
       ];
+    };
+
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = sharedModules;
     };
   };
 }

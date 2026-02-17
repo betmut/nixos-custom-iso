@@ -1,7 +1,6 @@
 {config, pkgs, lib, ... }: {
 
   system.stateVersion = "25.11";
-  #imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" ];
 
   #Zsh Shell
   programs.zsh.enable = true;
@@ -27,12 +26,11 @@
     initrd.kernelModules = [ "wl" ];
     kernelModules = [ "wl" ];
     extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-    blacklistedKernelModules = [ "b43" "bcma" ];
+    #blacklistedKernelModules = [ "b43" "bcma" ];
   };
   
   # Networking
   networking.networkmanager.enable = true;
-  networking.wireless.enable = lib.mkForce false; # Use NM instead for easier CLI setup
 
   #Font
   fonts = {
