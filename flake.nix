@@ -30,7 +30,7 @@
     ];
   in
   {
-    packages.x86_64-linux.iso = inputs.nixos-generators.nixosGenerate {
+    packages.x86_64-linux.minimal-iso = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "install-iso";
       modules = sharedModules;
