@@ -46,6 +46,24 @@
     };
   };
 
+  services = {
+    #thermald
+    thermald.enable = true;
+
+    #mbpfan -- fan controller daemon for Apple Macs and MacBook
+    mbpfan = {
+      enable = true;
+      aggressive = false;
+      settings = {
+        options.general = {
+          low_temp = 63;  # If temperature is below this, fans will run at minimum speed.
+          high_temp = 66; # If temperature is above this, fan speed will gradually increase.
+          max_temp = 86; # If temperature is above this, fans will run at maximum speed.
+          };
+      };
+    };
+  };
+  
   #Environment Variables
   environment.variables = {
     EDITOR = "vim";
