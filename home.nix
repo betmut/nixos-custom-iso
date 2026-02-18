@@ -46,7 +46,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "battery"];
+      plugins = ["git" "battery" "sudo"];
       theme = "aussiegeek";
     };
   };
