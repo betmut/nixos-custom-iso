@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ... }: {
+{config, pkgs, inputs, ... }: lib.mkIf pkgs.stdenv.isLinux {
     #Zsh Shell
     programs.zsh.enable = true;
     users.users.nixos = {
