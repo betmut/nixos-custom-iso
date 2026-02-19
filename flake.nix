@@ -79,7 +79,7 @@
           # Optional: Align homebrew taps config with nix-homebrew
           homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
           nixpkgs.hostPlatform = "x86_64-darwin";
-          })
+        })
         inputs.nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
