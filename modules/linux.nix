@@ -15,7 +15,11 @@
     # Allow proprietary software (Required for Broadcom)
     nixpkgs.config = {
         allowUnfree = true;
-        permittedInsecurePackages = ["broadcom-sta-6.30.223.271-59-6.12.69" "broadcom-sta-6.30.223.271-59-6.18.10"];
+        permittedInsecurePackages = [
+            "broadcom-sta-6.30.223.271-59-6.12.69" 
+            "broadcom-sta-6.30.223.271-59-6.18.10"
+            "broadcom-sta-6.30.223.271-59-6.18.12"
+        ];
     };
 
     # Support for Broadcom BCM4360
