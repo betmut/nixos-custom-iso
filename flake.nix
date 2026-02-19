@@ -37,7 +37,9 @@
   outputs = inputs@{ self, nixpkgs, ... }: 
   let
     # Run scutil --get LocalHostName > ./hostname/mac to get your Mac Hostname 
-    macHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/mac); 
+    macHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/mac);
+    linuxHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
+
     sharedModules = user: [
       ./configuration.nix
       inputs.home-manager.nixosModules.home-manager
@@ -72,12 +74,6 @@
 
     darwinConfigurations.${macHostname} = inputs.nix-darwin.lib.darwinSystem {
       modules = (sharedModules "macUser") ++ [
-        ({pkgs, config,...}:{
-          nixpkgs.hostPlatform = "x86_64-darwin";
-
-          # Optional: Align homebrew taps config with nix-homebrew
-          homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
-        })
         inputs.nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
@@ -92,8 +88,8 @@
 
             # Optional: Declarative tap management
             taps = {
-              "homebrew/homebrew-core" = homebrew-core;
-              "homebrew/homebrew-cask" = homebrew-cask;
+              "homebrew/homebrew-core" = inputs.homebrew-core;
+              "homebrew/homebrew-cask" = inputs.homebrew-cask;
             };
 
             # Optional: Enable fully-declarative tap management

@@ -1,4 +1,8 @@
 {config, pkgs, inputs, ... }: {
+    nixpkgs.hostPlatform = "x86_64-darwin"; #aarch64-darwin for Apple Silicon
+
+    # Optional: Align homebrew taps config with nix-homebrew
+    homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
     homebrew = {
         enable = true;
         casks = [
