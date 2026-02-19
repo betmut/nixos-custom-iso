@@ -1,4 +1,5 @@
 {config, pkgs, inputs, lib, ... }: {
+    
     homebrew = {
         enable = true;
         casks = [
