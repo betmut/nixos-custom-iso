@@ -36,7 +36,7 @@
 
   outputs = inputs@{ self, nixpkgs, ... }: 
   let
-    # Run scutil --get LocalHostName > ./hostname/mac to get your Mac Hostname 
+    # Run scutil --get LocalHostName > ./hostname/mac to get your Mac Hostname (Please double check it!)
     macHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/mac);
     linuxHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
 
