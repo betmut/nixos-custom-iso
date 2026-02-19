@@ -38,10 +38,10 @@
             enable = true;
             aggressive = false;
             settings = {
-            general = {
-                low_temp = 63;  # If temperature is below this, fans will run at minimum speed.
-                high_temp = 66; # If temperature is above this, fan speed will gradually increase.
-                max_temp = 86; # If temperature is above this, fans will run at maximum speed.
+                general = {
+                    low_temp = 63;  # If temperature is below this, fans will run at minimum speed.
+                    high_temp = 66; # If temperature is above this, fan speed will gradually increase.
+                    max_temp = 86; # If temperature is above this, fans will run at maximum speed.
                 };
             };
         };
