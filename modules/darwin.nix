@@ -1,5 +1,4 @@
-{config, pkgs, lib, inputs, ... }: lib.mkIf pkgs.stdenv.isDarwin {
-    
+{config, pkgs, inputs, lib, ... }: {
     homebrew = {
         enable = true;
         casks = [
