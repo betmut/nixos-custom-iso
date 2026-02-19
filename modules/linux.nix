@@ -1,4 +1,4 @@
-{
+{config, pkgs, inputs, ... }: {
     #Zsh Shell
     programs.zsh.enable = true;
     users.users.nixos = {
