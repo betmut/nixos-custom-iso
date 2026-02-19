@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ... }: lib.mkIf pkgs.stdenv.isDarwin {
+{config, pkgs, inputs, lib, ... }: lib.mkIf pkgs.stdenv.isDarwin {
     nixpkgs.hostPlatform = "x86_64-darwin"; #aarch64-darwin for Apple Silicon
 
     # Optional: Align homebrew taps config with nix-homebrew
