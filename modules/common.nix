@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ... }: {
+{
     #Font
     fonts = {
         enableDefaultPackages = true;
