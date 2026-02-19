@@ -1,4 +1,4 @@
-{config, pkgs, lib, inputs, lib, ... }: lib.mkIf pkgs.stdenv.isDarwin {
+{config, pkgs, lib, inputs, ... }: lib.mkIf pkgs.stdenv.isDarwin {
     
     homebrew = {
         enable = true;
