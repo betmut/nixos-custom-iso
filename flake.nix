@@ -87,7 +87,7 @@
             enable = true;
 
             # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-            enableRosetta = true;
+            enableRosetta = if nixpkgs.hostPlatform == "x86_64-darwin" then true else false;
 
             # User owning the Homebrew prefix
             user = "macUser";
