@@ -1,6 +1,8 @@
+#!/bin/bash
+
 update_config() {
   local target_os=${1:-$(uname | tr '[:upper:]' '[:lower:]')}
-  local file="configuration.nix"
+  local file="../../configuration.nix"
 
   # Memastikan file ada sebelum diproses
   if [ ! -f "$file" ]; then
@@ -11,13 +13,15 @@ update_config() {
   if [ "$target_os" == "linux" ]; then
     echo "Changing configuration to Linux..."
     # Searching 'darwin' and replace it with 'linux'
-    sed -i 's/darwin/linux/g' "$file"
+    sed -i 's/darwin/linux/g' "$file" && git add $file
   else
     echo "Changing configuration to Darwin (macOS)..."
     # Searching 'linux' and replace it with 'darwin'
-    sed -i 's/linux/darwin/g' "$file"
+    sed -i 's/linux/darwin/g' "$file" && git add $file
   fi
 
   echo "Selesai! Berikut isi file sekarang:"
   grep -E "linux|darwin" "$file"
 }
+
+update_config
