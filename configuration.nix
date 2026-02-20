@@ -4,7 +4,6 @@
   imports = [
     ./modules/common.nix
     ./modules/linux.nix
-    ./modules/darwin.nix
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
