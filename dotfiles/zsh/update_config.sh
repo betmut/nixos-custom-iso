@@ -20,7 +20,7 @@ update_config() {
     sed -i 's/linux/darwin/g' "$file" && git add $file
   fi
 
-  echo "Selesai! Berikut isi file sekarang:"
+  echo "Done!"
   grep -E "linux|darwin" "$file"
 }
 
