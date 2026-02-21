@@ -1,7 +1,6 @@
 #!/bin/bash
 
 update_config() {
-  local target_os=${1:-$(uname | tr '[:upper:]' '[:lower:]')}
   local file="configuration.nix"
 
   # Memastikan file ada sebelum diproses
