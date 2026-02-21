@@ -10,7 +10,7 @@ update_config() {
     return 1
   fi
 
-  if [ "$target_os" == "linux" ]; then
+  if [[ "$OSTYPE" = linux* ]]; then
     echo "Changing configuration to Linux..."
     # Searching 'darwin' and replace it with 'linux'
     sed -i 's/darwin/linux/g' "$file" && git add $file
