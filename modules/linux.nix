@@ -1,16 +1,6 @@
-{config, pkgs, inputs,  ... }: 
-let
-    userDefaults = {
-        shell = pkgs.zsh;
-        isNormalUser = true;
-        extraGroups = ["wheel"];
-        initialPassword = "";
-    };
-in
-{
+{config, pkgs, inputs,  ... }: {
     #Zsh Shell
     programs.zsh.enable = true;
-    users.users.nixos = userDefaults;
    
     #Enable facetimehd
     hardware.facetimehd.enable = true;
