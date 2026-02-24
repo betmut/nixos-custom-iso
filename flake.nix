@@ -75,7 +75,7 @@
         ({pkgs, ...}:{
           virtualisation.virtualbox.guest.enable = true;
           users.users.nixos = userDefaults;
-          })
+        })
       ];
     };
 
