@@ -14,6 +14,11 @@
   services.fstrim.enable = true; #Enable TRIM
   services.printing.enable = true; #Enable CUPS to print documents.
   services.libinput.enable = true; #Enable touchpad support
+  #pulseaudio config
+  services.pulseaudio = {
+    enable = true;
+    support32Bit = true; #if compatibility with 32-bit applications is desired.
+  };
 
   #Enable X11 window server
   #services.xserver = {
@@ -37,12 +42,5 @@
     };
     efi.canTouchEfiVariables = true;
   };
-  
-  hardware = {
-    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    pulseaudio = {
-      enable = true;
-      support32Bit = true;    ## If compatibility with 32-bit applications is desired.
-    };
-  };
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
