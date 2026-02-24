@@ -83,7 +83,7 @@
       system = "x86_64-linux";
       modules = (sharedModules "mathewelhans") ++ [
         ({pkgs,...}:{
-          users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio"];};
+          users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager"];};
         })
         ./hardware-configuration.nix
         ./filesystems.nix
