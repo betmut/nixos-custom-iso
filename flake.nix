@@ -83,7 +83,7 @@
       system = "x86_64-linux";
       modules = (sharedModules "linuxUser") ++ [
         ({pkgs,...}:{
-          users.users.linuxUser = userDefaults;
+          users.users.linuxUser = userDefaults // {extraGroups = ["wheel" "audio"];};
         })
         ./hardware-configuration.nix
       ];

@@ -1,24 +1,49 @@
 {pkgs, inputs, config, lib, ...}:{
 
+  #Timezone
+  time.timeZone = "Asia/Jakarta";
+
   # Keyboard layout
-  services.xserver.xkb.layout = "us";
+  console = {
+    keyMap = "us";
+    font = "Lat2-Terminus16";
+  };
 
   # Define Hostname
   networking.hostName = lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
-
-  boot.loader.grub.device = "/dev/sda";
   services.fstrim.enable = true;
+
+  #Localization
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  #Bootloader
+  boot.loader = {
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+    };
+    efi.canTouchEfiVariables = true;
+  };
   
-  fileSystems."/" = { 
-    device = "/dev/disk/by-uuid/<uuid>";
-    fsType = "ext4";
-    option = ["noatime" "nodiratime"];
-    # ..2.
+  hardware = {
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;    ## If compatibility with 32-bit applications is desired.
+    };
+
   };
 
-  fileSystems."/boot" = { 
-    device = "/dev/disk/by-uuid/<uuid>";
-    fsType = "vfat"
-    # ...
+  fileSystems = {
+    "/" = { 
+      device = "/dev/disk/by-uuid/<uuid>";
+      fsType = "ext4";
+      option = ["noatime" "nodiratime"];
+    };
+
+    "/boot" = { 
+      device = "/dev/disk/by-uuid/<uuid>";
+      fsType = "vfat";
+    };
   };
 }
