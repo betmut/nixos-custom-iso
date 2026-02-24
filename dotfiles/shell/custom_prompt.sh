@@ -1,1 +1,1 @@
-RPROMPT='$(battery_pct_prompt) %{$fg[white]%}%T%{$reset_color%}'
+RPROMPT='$(battery_pct_prompt) %{$reset_color%}'
