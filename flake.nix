@@ -66,7 +66,7 @@
       modules = (sharedModules "nixos") ++ [
         ({pkgs,...}:{
           users = {
-            mutableUser = false; #let nix manage the password and user
+            mutableUsers = false; #let nix manage the password and user
             users.nixos = userDefaults;
           };
         })
