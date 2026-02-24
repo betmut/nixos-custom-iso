@@ -40,7 +40,7 @@
     macHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/mac);
     linuxHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
 
-    sharedModules = {user, filePath}: [
+    sharedModules = user: [
       ./configuration.nix
       inputs.home-manager.nixosModules.home-manager
       {
@@ -48,7 +48,7 @@
           extraSpecialArgs = { inherit inputs; };
           useGlobalPkgs = true;
           useUserPackages = true;
-          users.${user} = filePath;
+          users.${user} = ./home.nix;
           };
       }
     ];
@@ -63,7 +63,7 @@
     packages.x86_64-linux.minimal-iso = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "install-iso";
-      modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix;}) ++ [
+      modules = (sharedModules "nixos") ++ [
         ({pkgs,...}:{users.users.nixos = userDefaults;})
       ];
     };
@@ -71,7 +71,7 @@
     packages.x86_64-linux.vbox = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "virtualbox";
-      modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix;}) ++ [
+      modules = (sharedModules "nixos") ++ [
         ({pkgs, ...}:{
           virtualisation.virtualbox.guest.enable = true;
           users.users.nixos = userDefaults;
@@ -81,7 +81,7 @@
 
     nixosConfigurations.${linuxHostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = sharedModules {user = "linuxUser"; filePath = ./users/linuxUser/home.nix;} ++ [
+      modules = (sharedModules "linuxUser") ++ [
         ({pkgs,...}:{
           users.users.linuxUser = userDefaults;
         })
@@ -90,7 +90,7 @@
     };
 
     darwinConfigurations.${macHostname} = inputs.nix-darwin.lib.darwinSystem {
-      modules = (sharedModules {user = "macUser"; filePath = ./users/macUser/home.nix;}) ++ [
+      modules = (sharedModules "macUser") ++ [
         ({pkgs, config,  ...}: {
           # Optional: Align homebrew taps config with nix-homebrew
           homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
