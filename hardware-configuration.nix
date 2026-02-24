@@ -1,16 +1,24 @@
-{pkgs, inputs, config,...}:{
-  boot.loader.grub.device = "/dev/sda";
-  networking.hostName = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
+{pkgs, inputs, config, lib, ...}:{
 
+  # Keyboard layout
+  services.xserver.xkb.layout = "us";
+
+  # Define Hostname
+  networking.hostName = lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
+
+  boot.loader.grub.device = "/dev/sda";
   services.fstrim.enable = true;
   
   fileSystems."/" = { 
-    device = "/dev/sda3";
-    # ...
+    device = "/dev/disk/by-uuid/<uuid>";
+    fsType = "ext4";
+    option = ["noatime" "nodiratime"];
+    # ..2.
   };
 
   fileSystems."/boot" = { 
-    device = "/dev/sda1";
+    device = "/dev/disk/by-uuid/<uuid>";
+    fsType = "vfat"
     # ...
   };
 }
