@@ -57,7 +57,6 @@
       isNormalUser = true;
       extraGroups = ["wheel"]; #sudo privillege
       initialPassword = "";
-      mutableUser = false; #let nix manage the password and user
     };
   in
   {
@@ -65,7 +64,12 @@
       system = "x86_64-linux";
       format = "install-iso";
       modules = (sharedModules "nixos") ++ [
-        ({pkgs,...}:{users.users.nixos = userDefaults;})
+        ({pkgs,...}:{
+          users = {
+            mutableUser = false; #let nix manage the password and user
+            users.nixos = userDefaults;
+          };
+        })
       ];
     };
 
