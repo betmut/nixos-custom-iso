@@ -64,12 +64,7 @@
       system = "x86_64-linux";
       format = "install-iso";
       modules = (sharedModules "nixos") ++ [
-        ({pkgs,...}:{
-          users = {
-            mutableUsers = false; #let nix manage the password and user
-            users.nixos = userDefaults;
-          };
-        })
+        ({pkgs,...}:{users.users.nixos = userDefaults;})
       ];
     };
 
