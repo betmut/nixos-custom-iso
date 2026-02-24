@@ -45,7 +45,4 @@
       support32Bit = true;    ## If compatibility with 32-bit applications is desired.
     };
   };
-
-  #Copy the NixOS configuration file and link it from the resulting system (/run/current-system/configuration.nix)
-  system.copySystemConfiguration = true;
 }
