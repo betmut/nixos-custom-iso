@@ -27,23 +27,10 @@
   };
   
   hardware = {
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     pulseaudio = {
       enable = true;
       support32Bit = true;    ## If compatibility with 32-bit applications is desired.
-    };
-
-  };
-
-  fileSystems = {
-    "/" = { 
-      device = "/dev/disk/by-uuid/<uuid>";
-      fsType = "ext4";
-      option = ["noatime" "nodiratime"];
-    };
-
-    "/boot" = { 
-      device = "/dev/disk/by-uuid/<uuid>";
-      fsType = "vfat";
     };
   };
 }

@@ -1,4 +1,7 @@
-{config, pkgs, inputs,  ... }: {
+{config, pkgs, inputs, lib, ... }: {
+
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+    
     #Zsh Shell
     programs.zsh.enable = true;
    
@@ -16,8 +19,9 @@
 
     # Support for Broadcom BCM4360
     boot = {
+	initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sid" "sd_mod"]
         initrd.kernelModules = [ "wl" ];
-        kernelModules = [ "wl" ];
+        kernelModules = [ "wl" "kvm-intel" ];
         extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     };
     # Networking

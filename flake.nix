@@ -86,6 +86,7 @@
           users.users.linuxUser = userDefaults // {extraGroups = ["wheel" "audio"];};
         })
         ./hardware-configuration.nix
+        ./filesystem.nix
       ];
     };
 
