@@ -56,7 +56,8 @@
       shell = nixpkgs.legacyPackages.x86_64-linux.zsh;
       isNormalUser = true;
       extraGroups = ["wheel"]; #sudo privillege
-      initialPassword = "nixos";
+      initialPassword = "";
+      mutableUser = false; #let nix manage the password and user
     };
   in
   {
