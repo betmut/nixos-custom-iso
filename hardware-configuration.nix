@@ -11,7 +11,19 @@
 
   # Define Hostname
   networking.hostName = lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
-  services.fstrim.enable = true;
+  services.fstrim.enable = true; #Enable TRIM
+  services.printing.enable = true; #Enable CUPS to print documents.
+  services.libinput.enable = true; #Enable touchpad support
+
+  #Enable X11 window server
+  #services.xserver = {
+  #  enable = true;
+  #  #Configure keymap in X11
+  #  xkb = {
+  #      layout = "us";
+  #      options = "eurosign:e,caps:escape";
+  #  };
+  #};
 
   #Localization
   i18n.defaultLocale = "en_US.UTF-8";
@@ -33,4 +45,7 @@
       support32Bit = true;    ## If compatibility with 32-bit applications is desired.
     };
   };
+
+  #Copy the NixOS configuration file and link it from the resulting system (/run/current-system/configuration.nix)
+  system.copySystemConfiguration = true;
 }

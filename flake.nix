@@ -81,12 +81,12 @@
 
     nixosConfigurations.${linuxHostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = (sharedModules "linuxUser") ++ [
+      modules = (sharedModules "mathewelhans") ++ [
         ({pkgs,...}:{
-          users.users.linuxUser = userDefaults // {extraGroups = ["wheel" "audio"];};
+          users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio"];};
         })
         ./hardware-configuration.nix
-        ./filesystem.nix
+        ./filesystems.nix
       ];
     };
 
