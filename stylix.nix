@@ -2,11 +2,11 @@
 
   imports = [ 
     inputs.stylix.nixosModules.stylix 
-    inputs.stylix.homeModules.stylix 
+    #inputs.stylix.homeModules.stylix 
   ];
 
   stylix = {
-    enable = true;
+    autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
     polarity = "dark";
     image = "./wallpapers/abstract-2_1_1.jpg";
@@ -32,13 +32,11 @@
       };
       sizes = {
         applications = 12; # GUI apps (like Firefox menus, file managers)
-        terminal = 12;     # Your terminal emulator (Alacritty, Kitty, etc.)
+        terminal = 14;     # Your terminal emulator (Alacritty, Kitty, etc.)
         desktop = 10;      # Desktop widgets, bars, and notifications
         popups = 10;       # Tooltips and small menus
       };
     };
-    targets.kitty.enable = true;
-    targets.gnome.enable = false;
     opacity.terminal = 0.7;
   };
 }
