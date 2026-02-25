@@ -36,7 +36,7 @@
       tabstop = 4;
       mouse = "v";
     };
-    extraConfig = builtins.readFile ./dotfiles/vim/.vimrc;
+    extraConfig = builtins.readFile ../../dotfiles/vim/.vimrc;
 	};
 
   #zsh config
