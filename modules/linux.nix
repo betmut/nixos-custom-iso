@@ -31,7 +31,7 @@
     # Support for Broadcom BCM4360
     boot = {
         initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod"];
-        initrd.kernelModules = [ "wl" ];
+        initrd.kernelModules = [ "wl" "i915"];
         kernelModules = [ "wl" "kvm-intel" ];
         extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     };

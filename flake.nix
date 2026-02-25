@@ -87,7 +87,7 @@
       specialArgs = { inherit inputs; };
       modules = (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix;}) ++ [
         ({config, pkgs,...}:{
-          users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager"];};
+          users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager" "video" "render"];};
           environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
         })
         ./hardware-configuration.nix
