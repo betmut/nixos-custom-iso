@@ -1,4 +1,4 @@
-{pkgs, lib, ... }: {
+{config, pkgs, lib, ... }: {
   home.stateVersion = "25.11";
   
   #Packages
@@ -77,7 +77,6 @@
   };
 
   #hyprland config
-  environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
   programs.kitty.enable = true;
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {

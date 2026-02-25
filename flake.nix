@@ -86,8 +86,9 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix;}) ++ [
-        ({pkgs,...}:{
+        ({config, pkgs,...}:{
           users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager"];};
+          environment.pathToLink = ["/share/applications" "/share/xdg-desktop-portal"];
         })
         ./hardware-configuration.nix
         ./filesystems.nix
