@@ -49,15 +49,7 @@
       enable = true;
       plugins = ["git" "battery"];
       theme = "xiong-chiamiov-plus";
-    };
-  };
-  programs.kitty.enable = true;
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
-  };
-    
-    
+    };    
     initContent = 
     let
       zshRPROMPT = lib.mkOrder 1000 (builtins.readFile ./dotfiles/shell/custom_prompt.sh);
@@ -82,4 +74,10 @@
     #               zshConfig = lib.mkOrder 1000 "do something";
     #              in
     #               lib.mkMerge [ zshConfigEarlyInit zshConfig ];
+  };
+  programs.kitty.enable = true;
+  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.settings = {
+    "$mod" = "SUPER";
+  };
 }
