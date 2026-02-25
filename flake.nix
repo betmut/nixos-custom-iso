@@ -92,7 +92,7 @@
         })
         ./hardware-configuration.nix
         ./filesystems.nix
-        ./desktop-environment/hyprland.nix
+        ./desktop-environment/de-configuration.nix
       ];
     };
 
