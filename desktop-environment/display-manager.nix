@@ -8,4 +8,5 @@
         user = "greeter";
       };
     };
+  };
 }
