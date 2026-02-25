@@ -66,7 +66,7 @@
     packages.x86_64-linux.minimal-iso = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "install-iso";
-      modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix}) ++ [
+      modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix;}) ++ [
         ({pkgs,...}:{users.users.nixos = userDefaults;})
       ];
     };
@@ -74,7 +74,7 @@
     packages.x86_64-linux.vbox = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "virtualbox";
-      modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix}) ++ [
+      modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix;}) ++ [
         ({pkgs, ...}:{
           virtualisation.virtualbox.guest.enable = true;
           users.users.nixos = userDefaults;
@@ -85,7 +85,7 @@
     nixosConfigurations.${linuxHostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
-      modules = (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix}) ++ [
+      modules = (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix;}) ++ [
         ({pkgs,...}:{
           users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager"];};
         })
@@ -96,7 +96,7 @@
     };
 
     darwinConfigurations.${macHostname} = inputs.nix-darwin.lib.darwinSystem {
-      modules = (sharedModules {user = "macUser"; filePath = ./users/macUser/home.nix}) ++ [
+      modules = (sharedModules {user = "macUser"; filePath = ./users/macUser/home.nix;}) ++ [
         ({pkgs, config,  ...}: {
           # Optional: Align homebrew taps config with nix-homebrew
           homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
