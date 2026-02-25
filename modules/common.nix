@@ -15,7 +15,7 @@
 
     #Environment Variables
     environment.variables = {
-        EDITOR = "nano";
+        EDITOR = "vim";
     };
 
     # Optional: Add useful tools

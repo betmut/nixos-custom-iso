@@ -1,6 +1,9 @@
 {pkgs, inputs,...}:{
 
-  imports = [ inputs.stylix.nixosModules.stylix ];
+  imports = [ 
+    inputs.stylix.nixosModules.stylix 
+    inputs.stylix.homeModules.stylix 
+  ];
 
   stylix = {
     enable = true;
@@ -35,6 +38,7 @@
       };
     };
     targets.kitty.enable = true;
+    targets.gnome.enable = false;
     opacity.terminal = 0.7;
   };
 }
