@@ -32,6 +32,9 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: 
@@ -81,12 +84,14 @@
 
     nixosConfigurations.${linuxHostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       modules = (sharedModules "mathewelhans") ++ [
         ({pkgs,...}:{
           users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager"];};
         })
         ./hardware-configuration.nix
         ./filesystems.nix
+        ./desktop-environment/hyprland.nix
       ];
     };
 
