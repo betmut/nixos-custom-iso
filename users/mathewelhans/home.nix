@@ -75,6 +75,9 @@
     #              in
     #               lib.mkMerge [ zshConfigEarlyInit zshConfig ];
   };
+
+  #hyprland config
+  environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
   programs.kitty.enable = true;
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
