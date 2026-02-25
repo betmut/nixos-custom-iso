@@ -6,7 +6,7 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
     polarity = "dark";
-    #image = "";
+    image = "./wallpapers/abstract-2_1_1.jpg";
     fonts = {
       serif = {
         package = pkgs.newcomputermodern;
@@ -27,8 +27,14 @@
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
+      sizes = {
+        applications = 12; # GUI apps (like Firefox menus, file managers)
+        terminal = 12;     # Your terminal emulator (Alacritty, Kitty, etc.)
+        desktop = 10;      # Desktop widgets, bars, and notifications
+        popups = 10;       # Tooltips and small menus
+      };
     };
-    #stylix.targets.vscode.enable = false;
+    stylix.targets.kitty.enable = true;
     opacity.terminal = 0.7;
   };
 }
