@@ -16,7 +16,7 @@
   services.libinput.enable = true; #Enable touchpad support
   #pulseaudio config
   services.pulseaudio = {
-    enable = true;
+    enable = false;
     support32Bit = true; #if compatibility with 32-bit applications is desired.
   };
 

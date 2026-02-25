@@ -2,7 +2,7 @@
 let
   platformSystem = pkgs.stdenv.hostPlatform.system;
   hyprlandPkgs = inputs.hyprland.packages.${platformSystem};
-  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacypackages.${platformSystem};  
+  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${platformSystem};  
 in
 {
   programs.hyprland = {
