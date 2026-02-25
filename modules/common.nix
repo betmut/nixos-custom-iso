@@ -1,17 +1,17 @@
 {config, pkgs, inputs, ... }: {
     #Font
-    fonts = {
-        enableDefaultPackages = true;
-        packages = with pkgs; [
-            nerd-fonts.hasklug
-            ubuntu-classic
-        ];
-        fontconfig = {
-            defaultFonts = {
-                monospace = ["Hasklug Nerd Font" "Ubuntu Mono"];
-            };
-        };
-    };
+    #fonts = {
+    #    enableDefaultPackages = true;
+    #    packages = with pkgs; [
+    #        nerd-fonts.hasklug
+    #        ubuntu-classic
+    #    ];
+    #    fontconfig = {
+    #        defaultFonts = {
+    #            monospace = ["Hasklug Nerd Font" "Ubuntu Mono"];
+    #        };
+    #    };
+    #};
 
     #Environment Variables
     environment.variables = {

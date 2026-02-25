@@ -35,6 +35,11 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: 
@@ -88,8 +93,8 @@
       modules = (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix;}) ++ [
         ({config, pkgs,...}:{
           users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager" "video" "render"];};
-          #environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
         })
+        ./stylix.nix
         ./hardware-configuration.nix
         ./filesystems.nix
         ./desktop-environment/de-configuration.nix
