@@ -16,7 +16,7 @@ in
     package = pkgs-unstable.mesa;
 
     #enable 32 bit support
-    enable32bit = true;
+    enable32Bit = true;
     package32 = pkgs-unstable.pkgsi686Linux.mesa;
   };
 }
