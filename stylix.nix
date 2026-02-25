@@ -9,7 +9,7 @@
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
     polarity = "dark";
-    image = "./wallpapers/abstract-2_1_1.jpg";
+    image = "./wallpapers/abstact-2_1_1.jpg";
     fonts = {
       serif = {
         package = pkgs.newcomputermodern;
