@@ -49,13 +49,13 @@
       enable = true;
       plugins = ["git" "battery"];
       theme = "xiong-chiamiov-plus";
-   };
-   programs.kitty.enable = true;
-   
-   wayland.windowManager.hyprland.enable = true;
-   wayland.windowManager.hyprland.settings = {
+    };
+  };
+  programs.kitty.enable = true;
+  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-   };
+  };
     
     
     initContent = 
