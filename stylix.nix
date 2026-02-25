@@ -6,7 +6,7 @@
   ];
 
   stylix = {
-    autoEnable = true;
+    enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
     polarity = "dark";
     image = "./wallpapers/abstact-2_1_1.jpg";

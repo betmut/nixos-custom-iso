@@ -47,7 +47,9 @@
       mouse = "v";
     };
     extraConfig = builtins.readFile ../../dotfiles/vim/.vimrc;
-	};
+  };
+
+  programs.dconf.enable = true;
 
   #zsh config
   programs.zsh = {
