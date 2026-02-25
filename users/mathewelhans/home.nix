@@ -82,5 +82,4 @@
     #               zshConfig = lib.mkOrder 1000 "do something";
     #              in
     #               lib.mkMerge [ zshConfigEarlyInit zshConfig ];
-  };
 }
