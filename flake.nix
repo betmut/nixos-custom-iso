@@ -101,6 +101,14 @@
       ];
     };
 
+    homeConfigurations."mathewelhans" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        ./stylix.nix
+        ./users/mathewelhans/home.nix
+        ];
+      };
+
     darwinConfigurations.${macHostname} = inputs.nix-darwin.lib.darwinSystem {
       modules = (sharedModules {user = "macUser"; filePath = ./users/macUser/home.nix;}) ++ [
         ({pkgs, config,  ...}: {
