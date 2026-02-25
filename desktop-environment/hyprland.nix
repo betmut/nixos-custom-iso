@@ -5,6 +5,7 @@ let
   pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${platformSystem};  
 in
 {
+  environment.systemPackages = [pkgs.kitty];
   programs.hyprland = {
     enable = true;
     package = hyprlandPkgs.hyprland;

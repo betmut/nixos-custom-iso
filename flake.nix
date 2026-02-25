@@ -32,9 +32,9 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    #hyprland = {
-    #  url = "github:hyprwm/Hyprland";
-    #};
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: 
@@ -88,11 +88,11 @@
       modules = (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix;}) ++ [
         ({config, pkgs,...}:{
           users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager" "video" "render"];};
-          environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
+          #environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
         })
         ./hardware-configuration.nix
         ./filesystems.nix
-        #./desktop-environment/hyprland.nix
+        ./desktop-environment/hyprland.nix
       ];
     };
 
