@@ -101,8 +101,9 @@
       ];
     };
 
-    homeConfigurations."mathewelhans" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."mathewelhans" = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      specialArgs = { inherit inputs; };
       modules = [
         ./stylix.nix
         ./users/mathewelhans/home.nix
