@@ -34,7 +34,7 @@
         popups = 10;       # Tooltips and small menus
       };
     };
-    stylix.targets.kitty.enable = true;
+    targets.kitty.enable = true;
     opacity.terminal = 0.7;
   };
 }
