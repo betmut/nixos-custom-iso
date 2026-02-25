@@ -43,7 +43,7 @@
     macHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/mac);
     linuxHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
 
-    sharedModules = user: [
+    sharedModules = {user, filePath}: [
       ./configuration.nix
       inputs.home-manager.nixosModules.home-manager
       {
@@ -51,7 +51,7 @@
           extraSpecialArgs = { inherit inputs; };
           useGlobalPkgs = true;
           useUserPackages = true;
-          users.${user} = ./home.nix;
+          users.${user} = filePath;
           };
       }
     ];
@@ -66,7 +66,7 @@
     packages.x86_64-linux.minimal-iso = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "install-iso";
-      modules = (sharedModules "nixos") ++ [
+      modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix}) ++ [
         ({pkgs,...}:{users.users.nixos = userDefaults;})
       ];
     };
@@ -74,7 +74,7 @@
     packages.x86_64-linux.vbox = inputs.nixos-generators.nixosGenerate {
       system = "x86_64-linux";
       format = "virtualbox";
-      modules = (sharedModules "nixos") ++ [
+      modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix}) ++ [
         ({pkgs, ...}:{
           virtualisation.virtualbox.guest.enable = true;
           users.users.nixos = userDefaults;
@@ -85,18 +85,18 @@
     nixosConfigurations.${linuxHostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
-      modules = (sharedModules "mathewelhans") ++ [
+      modules = (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix}) ++ [
         ({pkgs,...}:{
           users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager"];};
         })
         ./hardware-configuration.nix
         ./filesystems.nix
-        ./desktop-environment/hyprland.nix
+        #./desktop-environment/hyprland.nix
       ];
     };
 
     darwinConfigurations.${macHostname} = inputs.nix-darwin.lib.darwinSystem {
-      modules = (sharedModules "macUser") ++ [
+      modules = (sharedModules {user = "macUser"; filePath = ./users/macUser/home.nix}) ++ [
         ({pkgs, config,  ...}: {
           # Optional: Align homebrew taps config with nix-homebrew
           homebrew.taps = builtins.attrNames config.nix-homebrew.taps;
