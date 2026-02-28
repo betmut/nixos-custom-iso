@@ -1,24 +1,32 @@
 {pkgs, inputs,...}:{
-
-  imports = [ 
-    #inputs.stylix.nixosModules.stylix 
-    inputs.stylix.homeModules.stylix 
-  ];
-
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
     polarity = "dark";
-    image = "./wallpapers/abstact-2_1_1.jpg";
+    image = ./users/mathewelhans/wallpapers/cabin.png;
+
+    cursor = {
+      package = pkgs.apple-cursor;
+      name = "macOS";
+      size = 24;
+    };
+
+    icons = {
+      enable = true;
+      package = pkgs.whitesur-icon-theme; 
+      dark = "WhiteSur-dark";
+      light = "WhiteSur-light";
+    };
+
     fonts = {
       serif = {
         package = pkgs.newcomputermodern;
-        name = "TeX Gyre Termes";
+        name = "NewComputerModern10";
       };
       
       sansSerif = {
         package = pkgs.ubuntu-sans;
-        name = "Ubuntu";
+        name = "Ubuntu Sans";
       };
       
       monospace = {
@@ -36,6 +44,11 @@
         desktop = 10;      # Desktop widgets, bars, and notifications
         popups = 10;       # Tooltips and small menus
       };
+    };
+
+    targets = {
+      grub.enable = false;
+      console.enable = false;
     };
     opacity.terminal = 0.7;
   };

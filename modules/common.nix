@@ -15,11 +15,12 @@
 
     #Environment Variables
     environment.variables = {
-        EDITOR = "vim";
+        EDITOR = "nano";
     };
 
     # Optional: Add useful tools
     environment.systemPackages = with pkgs; [
+        cloudflare-warp
         tmux 
         tree
         blueman

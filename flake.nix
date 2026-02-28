@@ -94,21 +94,13 @@
         ({config, pkgs,...}:{
           users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager" "video" "render"];};
         })
+        inputs.stylix.nixosModules.stylix
         ./stylix.nix
         ./hardware-configuration.nix
         ./filesystems.nix
         ./desktop-environment/de-configuration.nix
       ];
-    };
-
-    homeConfigurations."mathewelhans" = inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./stylix.nix
-        ./users/mathewelhans/home.nix
-        ];
-      };
+    }; 
 
     darwinConfigurations.${macHostname} = inputs.nix-darwin.lib.darwinSystem {
       modules = (sharedModules {user = "macUser"; filePath = ./users/macUser/home.nix;}) ++ [

@@ -37,7 +37,10 @@
     };
 
     # Networking
-    networking.networkmanager.enable = true;
+    networking.networkmanager = {
+      enable = true;
+    };
+
     #networking.firewall = {
     #    enable = false;
     #    allowedTCPPorts =  [];
@@ -50,21 +53,26 @@
     #};
         
     services = {
-        #thermald
-        thermald.enable = true;
-        #Enable the OpenSSH Daemon
-        openssh.enable = true;
-        #mbpfan -- fan controller daemon for Apple Macs and MacBook
-        mbpfan = {
-            enable = true;
-            aggressive = false;
-            settings = {
-                general = {
-                    low_temp = 63;  # If temperature is below this, fans will run at minimum speed.
-                    high_temp = 66; # If temperature is above this, fan speed will gradually increase.
-                    max_temp = 86; # If temperature is above this, fans will run at maximum speed.
-                };
-            };
+      #thermald
+      thermald.enable = true;
+
+      #Enable the OpenSSH Daemon
+      openssh.enable = true;
+
+      #enable warp daemons
+      cloudflare-warp.enable = true;
+      
+      #mbpfan -- fan controller daemon for Apple Macs and MacBook
+      mbpfan = {
+        enable = true;
+        aggressive = false;
+        settings = {
+          general = {
+            low_temp = 63;  # If temperature is below this, fans will run at minimum speed.
+            high_temp = 66; # If temperature is above this, fan speed will gradually increase.
+            max_temp = 86; # If temperature is above this, fans will run at maximum speed.
+          };
         };
+      };
     };
 }
