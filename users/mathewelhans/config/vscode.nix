@@ -35,7 +35,16 @@
         "editor.cursorStyle" = "line";
         "editor.fontLigatures" =  true; 
         "editor.tabSize" = 2;
-      };
+
+        "[nix]" = {
+          "editor.tabSize" = 2;      # Nix community standard is 2 spaces
+        };
+        "[python]" = {
+          "editor.tabSize" = 4;      # Standard for PEP 8
+        };
+        "[javascript]" = {
+          "editor.tabSize" = 2;
+        };
     };
   };
 }
