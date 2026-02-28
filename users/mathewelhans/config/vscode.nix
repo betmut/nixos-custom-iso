@@ -45,6 +45,7 @@
         "[javascript]" = {
           "editor.tabSize" = 2;
         };
+      };
     };
   };
 }
