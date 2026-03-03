@@ -10,7 +10,18 @@
   home.stateVersion = "25.11";
   
   #Packages
-  home.packages = with pkgs; [nodejs python3 R gemini-cli htop cmatrix];
+  home.packages = with pkgs; [
+    nodejs 
+    python3 
+    R 
+    gemini-cli 
+    htop 
+    cmatrix 
+    brightnessctl 
+    playerctl
+    wireplumber
+  ];
+
   home.sessionVariables = {
     GIT_EDITOR = "vim";
   };
