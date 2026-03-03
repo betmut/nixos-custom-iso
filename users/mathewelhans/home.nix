@@ -50,5 +50,7 @@
 
     "yazi/theme.toml".source = ../../dotfiles/yazi/theme.toml;
     "yazi/flavors".source  = ../../dotfiles/yazi/flavors;
+
+    "neofetch/config.conf".source = ../../dotfiles/neofetch/config.conf;
   };
 }
