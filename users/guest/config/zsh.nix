@@ -1,44 +1,4 @@
-{pkgs, lib, ... }: {
-  home.stateVersion = "25.11";
-  
-  #Packages
-  home.packages = with pkgs; [nodejs python3 R gemini-cli htop cmatrix];
-  home.sessionVariables = {
-    GIT_EDITOR = "vim";
-  };
-  
-  #VIM config
-  programs.vim = {
-    enable = true;
-    plugins = with pkgs.vimPlugins; 
-      [
-        vim-fugitive
-        vim-airline
-        vim-airline-themes
-        vim-airline-clock
-        vim-slime
-        vim-racket
-        gruvbox
-        nerdtree
-        coc-nvim
-        Vundle-vim
-
-        #coc plugins
-        coc-pyright #python lsp
-        coc-sh
-      ];
-    settings = {
-      background = "dark";
-      expandtab = true;
-      number = true;
-      shiftwidth = 4;
-      tabstop = 4;
-      mouse = "v";
-    };
-    extraConfig = builtins.readFile ../../dotfiles/vim/.vimrc;
-	};
-
-  #zsh config
+{config, pkgs, lib, ...}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -52,7 +12,7 @@
     
     initContent = 
     let
-      zshRPROMPT = lib.mkOrder 1000 (builtins.readFile ../../dotfiles/shell/custom_prompt.sh);
+      zshRPROMPT = lib.mkOrder 1000 (builtins.readFile ../../../dotfiles/shell/custom_prompt.sh);
     in
       lib.mkMerge [zshRPROMPT];
     #Content to be added to {file}`.zshrc`.

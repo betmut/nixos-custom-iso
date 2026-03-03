@@ -3,7 +3,8 @@
   imports = [
     ./config/vscode.nix
     ./config/vim.nix
-    ./config/hyprland.nix
+    ./config/hypridle.nix
+    ./config/hyprpaper.nix
     ./config/zsh.nix
   ];
   home.stateVersion = "25.11";
