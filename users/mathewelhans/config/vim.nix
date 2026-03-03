@@ -26,7 +26,7 @@
       number = true;
       shiftwidth = 4;
       tabstop = 4;
-      mouse = "v";
+      mouse = "a";
     };
     extraConfig = builtins.readFile ../../../dotfiles/vim/.vimrc;
   };
