@@ -17,8 +17,12 @@
 
   #.config files
   xdg.configFile = {
-  "hypr/hyprland.conf".source = ../../dotfiles/hyprland/hyprland.conf;
-  "kitty/kitty.conf".source = ../../dotfiles/kitty/kitty.conf;
-  "yazi/theme.toml".source = ../../dotfiles/yazi/theme.toml;
+    "hypr/hyprland.conf".source = ../../dotfiles/hyprland/hyprland.conf;
+
+    "kitty/kitty.conf".source = ../../dotfiles/kitty/kitty.conf;
+    "kitty/gruvbox-kitty.conf".source = ../../dotfiles/kitty/gruvbox-kitty.conf;
+
+    "yazi/theme.toml".source = ../../dotfiles/yazi/theme.toml;
+    "yazi/flavors".source  = ../../dotfiles/yazi/flavors;
 };
 }
