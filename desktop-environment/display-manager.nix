@@ -5,10 +5,10 @@
     settings = {
       default_session = {
         command = let 
-          theme = "border=magenta;text=green;prompt=green;container=black;greet=blue;time=green";
-          greeting = "Welcome back. Ready to dive in?";
+          theme = "border=magenta;text=cyan;prompt=blue;container=black;greet=cyan;time=lightgreen";
+          greeting = "Welcome back!";
         in
-        "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland --theme ${theme} --greeting ${greeting}";
+        "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland --greeting '${greeting}' --theme '${theme}'";
         user = "greeter";
       };
     };

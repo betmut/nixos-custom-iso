@@ -49,7 +49,6 @@
     linuxHostname = nixpkgs.lib.removeSuffix "\n" (builtins.readFile ./hostname/linux);
 
     sharedModules = {user, filePath}: [
-      ./configuration.nix
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
@@ -73,6 +72,7 @@
       format = "install-iso";
       modules = (sharedModules {user = "nixos"; filePath = ./users/nixos/home.nix;}) ++ [
         ({pkgs,...}:{users.users.nixos = userDefaults;})
+        ./configuration.nix
       ];
     };
 
@@ -84,17 +84,27 @@
           virtualisation.virtualbox.guest.enable = true;
           users.users.nixos = userDefaults;
         })
+        ./configuration.nix
       ];
     };
 
     nixosConfigurations.${linuxHostname} = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
-      modules = (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix;}) ++ [
+      modules = 
+      (sharedModules {user = "mathewelhans"; filePath = ./users/mathewelhans/home.nix;}) ++
+      (sharedModules {user = "guest"; filePath = ./users/guest/home.nix;}) ++ [
         ({config, pkgs,...}:{
-          users.users.mathewelhans = userDefaults // {extraGroups = ["wheel" "audio" "networkmanager" "video" "render"];};
+          users.users.mathewelhans = userDefaults // {
+            extraGroups = ["wheel" "audio" "networkmanager" "video" "render"];
+          };
+          users.users.guest = userDefaults // {
+            extraGroups = [ "audio" "networkmanager" "video" "render"]; 
+            hashedPassword = "guest";
+          };
         })
         inputs.stylix.nixosModules.stylix
+        ./configuration.nix
         ./stylix.nix
         ./hardware-configuration.nix
         ./filesystems.nix
@@ -110,6 +120,7 @@
           nixpkgs.hostPlatform = "x86_64-darwin";
           users.users.macUser = userDefaults;
         })
+        ./configuration.nix
         inputs.nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
