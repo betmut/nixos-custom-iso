@@ -20,7 +20,6 @@
     brightnessctl 
     playerctl
     wireplumber
-    waypaper
   ];
 
   home.sessionVariables = {
