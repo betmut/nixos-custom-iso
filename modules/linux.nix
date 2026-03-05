@@ -41,11 +41,11 @@
       enable = true;
     };
 
-    #networking.firewall = {
-    #    enable = false;
-    #    allowedTCPPorts =  [];
+    networking.firewall = {
+      enable = true;
+      allowedTCPPorts =  [22];
     #    allowedUDPPorts = [];
-    #};
+    };
     
     #networking.proxy = {
     #    default = "http://user:password@proxy:port/";
@@ -57,7 +57,7 @@
       thermald.enable = true;
 
       #Enable the OpenSSH Daemon
-      openssh.enable = true;
+      openssh.enable = false;
 
       #enable warp daemons
       cloudflare-warp.enable = true;

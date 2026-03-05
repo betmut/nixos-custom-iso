@@ -27,6 +27,6 @@
         git 
         vim 
         pciutils # Useful for 'lspci'
-        neofetch
+        fastfetch
     ];
 }

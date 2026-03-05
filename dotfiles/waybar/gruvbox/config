@@ -80,8 +80,8 @@
         "format-linked": "󰒢 {essid} (No IP)",
         "format-disconnected": "󰒢 Disconnected",
         "format-alt": "{ifname} ({ipaddr})",
-        //"tooltip": false,
-	// "tooltip-format-wifi": "signal strength: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}",
+        "tooltip": true,
+        "tooltip-format": "signal strength: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}",
         "on-click-right": "exec nm-connection-editor"
   },
 
