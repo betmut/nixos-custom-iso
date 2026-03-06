@@ -29,12 +29,12 @@
     rstudio
     discord
     zoom-us
-    figma-linux
     vlc
     eog
     zotero
     zathura
     evince
+    virtualbox
   ];
   home.sessionVariables = {
     GIT_EDITOR = "vim";
