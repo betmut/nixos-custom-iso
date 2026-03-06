@@ -28,5 +28,6 @@
         vim 
         pciutils # Useful for 'lspci'
         fastfetch
+        quickemu
     ];
 }

@@ -32,7 +32,7 @@
     boot = {
         initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod"];
         initrd.kernelModules = [ "wl" "i915"];
-        kernelModules = [ "wl" "kvm-intel" ];
+        kernelModules = [ "wl" "kvm-intel" "dm_crypt"];
         extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     };
 
@@ -42,7 +42,7 @@
     };
 
     networking.firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts =  [22];
     #    allowedUDPPorts = [];
     };

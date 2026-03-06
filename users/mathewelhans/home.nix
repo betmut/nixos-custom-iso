@@ -34,7 +34,6 @@
     zotero
     zathura
     evince
-    virtualbox
   ];
   home.sessionVariables = {
     GIT_EDITOR = "vim";
@@ -53,4 +52,5 @@
 
     "neofetch/config.conf".source = ../../dotfiles/neofetch/config.conf;
   };
+  
 }
