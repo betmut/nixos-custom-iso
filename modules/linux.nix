@@ -24,7 +24,7 @@
     nixpkgs.config = {
         allowUnfree = true;
         permittedInsecurePackages = [
-            "broadcom-sta-6.30.223.271-59-6.18.15"
+            "broadcom-sta-6.30.223.271-59-6.18.16"
         ];
     };
 
@@ -32,7 +32,7 @@
     boot = {
         initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod"];
         initrd.kernelModules = [ "wl" "i915"];
-        kernelModules = [ "wl" "kvm-intel" "dm_crypt"];
+        kernelModules = [ "wl" "kvm-intel"];
         extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     };
 
@@ -64,7 +64,7 @@
       
       #mbpfan -- fan controller daemon for Apple Macs and MacBook
       mbpfan = {
-        enable = true;
+        enable = false;
         aggressive = false;
         settings = {
           general = {

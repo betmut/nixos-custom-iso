@@ -28,6 +28,7 @@
       slurp
       swappy
       wf-recorder
+      wl-clipboard
 
       gapless #music
     ];
