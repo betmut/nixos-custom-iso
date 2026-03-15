@@ -22,6 +22,7 @@
       hyprlock
       waybar                      #status bars
       swaynotificationcenter      #notification bars
+      libnotify                   #notification
 
       #screenshot tools
       grim
