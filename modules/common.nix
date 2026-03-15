@@ -29,5 +29,6 @@
         pciutils # Useful for 'lspci'
         fastfetch
         quickemu
+        cron
     ];
 }
