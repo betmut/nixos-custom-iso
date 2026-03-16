@@ -23,14 +23,18 @@
       };
     };
   };
-
+  
   systemd.services.low-battery-notification = {
     description = "Running an low-battery-notification";
-    wantedBy = [ "multi-user.target" ];
-    
+    #wantedBy = [ "multi-user.target" ];  
+    # Add this line! It makes notify-send available to the script
+    path = [ pkgs.libnotify ];
     serviceConfig = {
       ExecStart = "${pkgs.bash}/bin/bash ${../dotfiles/shell/low-battery-notification.sh}";
       Type = "oneshot";
+      User = "mathewelhans";
+      # Necessary to send notifications to your desktop from a service
+      Environment = "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus";
     };
   };
 
@@ -39,8 +43,8 @@
     wantedBy = [ "timers.target" ]; # This starts the timer on boot
     
     timerConfig = {
-      OnBootSec = "2m";       # Wait 2 mins after boot before first run
-      OnUnitActiveSec = "5m"; # Then run every 5 mins after that
+      OnBootSec = "1m";       # Wait 2 mins after boot before first run
+      OnUnitActiveSec = "1m"; # Then run every 5 mins after that
       Unit = "low-battery-notification.service";
     };
   };
