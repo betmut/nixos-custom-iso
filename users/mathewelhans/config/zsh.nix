@@ -13,8 +13,9 @@
     };    
     initContent = let 
       zshRPROMPT = lib.mkOrder 1000 (builtins.readFile ../../../dotfiles/shell/custom_prompt.sh);
+      spotify-notifier = lib.mkOrder 1000 "systemctl --user start spotify-notifier";
     in
-    lib.mkMerge [zshRPROMPT];
+    lib.mkMerge [zshRPROMPT spotify-notifier];
     #Content to be added to {file}`.zshrc`.
 
     #To specify the order, use `lib.mkOrder`.
