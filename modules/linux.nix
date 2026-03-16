@@ -24,7 +24,7 @@
     nixpkgs.config = {
         allowUnfree = true;
         permittedInsecurePackages = [
-            "broadcom-sta-6.30.223.271-59-6.18.17"
+            "broadcom-sta-6.30.223.271-59-6.18.18"
         ];
     };
 
@@ -51,28 +51,4 @@
     #    default = "http://user:password@proxy:port/";
     #    noProxy = "127.0.0.1,localhost,internal.domain";
     #};
-        
-    services = {
-      #thermald
-      thermald.enable = true;
-
-      #Enable the OpenSSH Daemon
-      openssh.enable = false;
-
-      #enable warp daemons
-      cloudflare-warp.enable = true;
-      
-      #mbpfan -- fan controller daemon for Apple Macs and MacBook
-      mbpfan = {
-        enable = false;
-        aggressive = false;
-        settings = {
-          general = {
-            low_temp = 63;  # If temperature is below this, fans will run at minimum speed.
-            high_temp = 66; # If temperature is above this, fan speed will gradually increase.
-            max_temp = 86; # If temperature is above this, fans will run at maximum speed.
-          };
-        };
-      };
-    };
 }

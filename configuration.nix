@@ -4,6 +4,7 @@
   imports = [
     ./modules/common.nix
     ./modules/linux.nix
+    ./modules/services.nix
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
   nix = {
