@@ -32,6 +32,7 @@
       wl-clipboard
 
       gapless #music
+      wlogout
     ];
 
     environment.etc = {

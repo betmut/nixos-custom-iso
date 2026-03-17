@@ -5,7 +5,7 @@
   
   "modules-left":   ["custom/nixos","hyprland/workspaces", "tray", "custom/playerctl"],
   "modules-center": ["clock"],
-  "modules-right":  ["custom/music","idle_inhibitor","temperature","backlight","pulseaudio", "network", "battery", "custom/power"],
+  "modules-right":  ["idle_inhibitor","temperature","backlight","pulseaudio", "network", "battery", "custom/power"],
 
   "wlr/taskbar": {
 	"format": "{icon} {app_id}",
@@ -78,11 +78,10 @@
         "format-wifi": "󰒢 {essid}",
         "format-ethernet": "󰈀  {ifname}",
         "format-linked": "󰒢 {essid} (No IP)",
-        "format-disconnected": "󰒢 Disconnected",
+        "format-disconnected": "󰞃 Disconnected",
         "format-alt": "{ifname} ({ipaddr})",
         "tooltip": true,
-        "tooltip-format": "signal strength: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}",
-        "on-click-right": "exec nm-connection-editor"
+        "tooltip-format": "signal strength: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}"
   },
 
   "pulseaudio": {
@@ -149,7 +148,7 @@
     
   "custom/power": {
     "format": " ⏻ ",
-    "on-click": "~/.config/hypr/hyprland.conf"
+    "on-click": "wlogout",
   },
   "custom/playerctl": {
     //"format": "<span font='12' rise='-2500'>{icon}</span> {}",
