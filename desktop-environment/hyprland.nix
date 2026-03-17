@@ -43,6 +43,10 @@
       #swayNC config 
       "xdg/swaync/config.json".source = ../dotfiles/swaync/config.json;
       "xdg/swaync/style.css".source = ../dotfiles/swaync/style.css;
+
+      #wlogout config
+      "wlogout/layout".source = ../dotfiles/wlogout/layout;
+      "wlogout/style.css".source = ../dotfiles/wlogout/style.css;
     };
 
     hardware.graphics = {
