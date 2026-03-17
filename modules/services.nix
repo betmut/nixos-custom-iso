@@ -1,11 +1,8 @@
 {config, pkgs, inputs, lib, ... }: {
   
   services = {
-    logind.extraConfig = ''
-      # Don't shutdown when power button is pressed
-      HandlePowerKey=ignore
-    '';
-    
+    logind.settings.Login.HandlePowerKey = "ignore";
+
     #thermald
     thermald.enable = true;
 
