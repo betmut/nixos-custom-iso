@@ -3,9 +3,9 @@
   "position": "top", 
   "height": 32,
   
-  "modules-left":   ["custom/nixos","hyprland/workspaces", "tray", "custom/playerctl"],
+  "modules-left":   ["custom/nixos", "hyprland/workspaces", "tray", "custom/playerctl"],
   "modules-center": ["clock"],
-  "modules-right":  ["idle_inhibitor","temperature","backlight","pulseaudio", "network", "battery", "custom/power"],
+  "modules-right":  ["idle_inhibitor","temperature", "cpu", "backlight","pulseaudio", "network", "battery", "custom/power"],
 
   "wlr/taskbar": {
 	"format": "{icon} {app_id}",
@@ -51,7 +51,8 @@
     },
    "custom/nixos": {
         "format": " ", // This is the NixOS icon from Nerd Fonts
-        "tooltip": false,
+        "tooltip": true,
+        "tooltip-format": "About My NixOS",
         "on-click": "kitty --hold fastfetch" // Optional: make it open your app menu
     },
 
@@ -125,6 +126,11 @@
 		"tooltip": false
 	},
 
+  "cpu": {
+    "interval": 2,
+    "format": "   {usage:>2}%"
+  },
+
   "backlight": {
             "format": "󰃠 {percent}%",
             "on-scroll-up": "brightness.sh --dec",
@@ -149,6 +155,7 @@
   "custom/power": {
     "format": " ⏻ ",
     "on-click": "wlogout",
+    "tooltip": false
   },
   "custom/playerctl": {
     //"format": "<span font='12' rise='-2500'>{icon}</span> {}",

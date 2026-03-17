@@ -51,6 +51,7 @@ tooltip {
 
 #custom-nixos,
 #custom-power,
+#cpu,
 #custom-music,
 #date,
 #backlight,
@@ -88,6 +89,11 @@ tooltip {
 
 #custom-power {
   color: #fb4934;
+  background: #32302f;
+}
+
+#cpu {
+  color: #ebdbb2;
   background: #32302f;
 }
 

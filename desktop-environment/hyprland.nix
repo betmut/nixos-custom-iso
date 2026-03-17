@@ -33,6 +33,7 @@
 
       gapless #music
       wlogout
+      swayosd
     ];
 
     environment.etc = {
