@@ -17,7 +17,7 @@
     #};
    
     #Enable facetimehd
-    hardware.facetimehd.enable = false;
+    hardware.facetimehd.enable = true;
     hardware.enableRedistributableFirmware = true;
     
     # Allow proprietary software (Required for Broadcom)
