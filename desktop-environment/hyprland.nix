@@ -45,8 +45,8 @@
       "xdg/swaync/style.css".source = ../dotfiles/swaync/style.css;
 
       #wlogout config
-      "wlogout/layout".source = ../dotfiles/wlogout/layout;
-      "wlogout/style.css".source = ../dotfiles/wlogout/style.css;
+      #"wlogout/layout".source = ../dotfiles/wlogout/layout;
+      #"wlogout/style.css".source = ../dotfiles/wlogout/style.css;
     };
 
     hardware.graphics = {

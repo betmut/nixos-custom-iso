@@ -52,7 +52,7 @@
    "custom/nixos": {
         "format": " ", // This is the NixOS icon from Nerd Fonts
         "tooltip": false,
-        "on-click": "neofetch" // Optional: make it open your app menu
+        "on-click": "kitty --hold fastfetch" // Optional: make it open your app menu
     },
 
    "custom/music": {
@@ -81,12 +81,12 @@
         "format-disconnected": "󰞃 Disconnected",
         "format-alt": "{ifname} ({ipaddr})",
         "tooltip": true,
-        "tooltip-format": "signal strength: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}"
+        "tooltip-format": "signal strength: {signalStrength} | down speed: {bandwidthDownBits}, up speed: {bandwidthUpBits}"
   },
 
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "{icon} {volume}%", 
+    "format": "{icon}   {volume}%", 
     "format-muted": "󰖁 Muted",
     "format-icons": {
       "headphone": "  ",
