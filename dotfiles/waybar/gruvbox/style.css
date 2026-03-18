@@ -120,8 +120,10 @@ tooltip {
 
 #custom-nixos {
   color: #ebdbb2;
+  padding: 0 0.7em;
   margin-right: 5px;
   margin-left: 6px;
+  border-radius: 10px;
 
 }
 
