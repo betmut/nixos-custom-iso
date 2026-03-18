@@ -33,7 +33,9 @@
     zotero
     zathura
     evince
+
     mgba
+    warzone2100
   ];
   home.sessionVariables = {
     GIT_EDITOR = "vim";
