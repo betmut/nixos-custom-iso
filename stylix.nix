@@ -3,8 +3,7 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
     polarity = "dark";
-    image = ./users/mathewelhans/wallpapers/cabin.png;
-
+    
     cursor = {
       package = pkgs.apple-cursor;
       name = "macOS";
