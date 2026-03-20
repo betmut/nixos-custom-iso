@@ -11,7 +11,7 @@
   #Packages
   home.packages = with pkgs; [
     gnome-font-viewer
-    cheese
+    guvcview
     vscode
     nodejs 
     python3 
