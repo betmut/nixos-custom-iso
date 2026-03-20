@@ -4,10 +4,11 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-    wallpaper = [
+      splash = false;
+      wallpaper = [
         {
           monitor = "eDP-1";
-          path = "${../wallpapers/cabin.png}";
+          path = "${../wallpapers/gruv-wallhaven-m9e9m1.png}";
         }
       ];
     };

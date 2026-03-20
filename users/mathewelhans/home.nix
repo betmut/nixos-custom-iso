@@ -4,6 +4,7 @@
     ./config/vscode.nix
     ./config/vim.nix
     ./config/hypridle.nix
+    ./config/hyprpaper.nix
     ./config/zsh.nix
   ];
   home.stateVersion = "25.11";
@@ -41,8 +42,7 @@
   #.config files
   xdg.configFile = {
     "hypr/hyprland.conf".source = ../../dotfiles/hyprland/hyprland.conf;
-    "hypr/hyprpaper.conf".source = ../../dotfiles/hyprpaper/hyprpaper.conf;
-
+  
     "kitty/kitty.conf".source = ../../dotfiles/kitty/kitty.conf;
     "kitty/gruvbox-kitty.conf".source = ../../dotfiles/kitty/gruvbox-kitty.conf;
 
