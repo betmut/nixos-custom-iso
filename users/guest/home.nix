@@ -3,7 +3,7 @@
   imports = [
     ./config/vim.nix
     ./config/zsh.nix
-    ./config/hypridle.nix
+    ./config/hyprpaper.nix
     ./config/hyprpaper.nix
 
   ];
