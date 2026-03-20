@@ -3,11 +3,12 @@
   #Hyprpaper config
   services.hyprpaper = {
     enable = true;
+    splash = false;
     settings = {
     wallpaper = [
         {
           monitor = "eDP-1";
-          path = "${../wallpaper/forest_castle.png}";
+          path = "${../wallpaper/Kurumi-Ebisuzawa.png}";
         }
       ];
     };
