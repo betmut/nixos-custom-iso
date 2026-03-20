@@ -15,23 +15,19 @@
     vscode
     nodejs 
     python3 
-    R 
-    gemini-cli 
+    R  
     htop 
     cmatrix 
     brightnessctl 
     wireplumber
     spotify
-    steam
     playerctl
     obsidian
     rstudio
     discord
     zoom-us
-    vlc
     eog
     zotero
-    zathura
     evince
 
     mgba
