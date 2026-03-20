@@ -8,7 +8,7 @@
       wallpaper = [
         {
           monitor = "eDP-1";
-          path = "~/nixos-custom-iso/users/guest/wallpapers/Kurumi-Ebisuzawa.png";
+          path = "${~/nixos-custom-iso/users/guest/wallpapers/Kurumi-Ebisuzawa.png}";
         }
       ];
     };
