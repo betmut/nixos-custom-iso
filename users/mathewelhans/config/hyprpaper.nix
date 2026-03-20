@@ -8,7 +8,7 @@
       wallpaper = [
         {
           monitor = "eDP-1";
-          path = "${./nixos-custom-iso/users/mathewelhans/wallpapers/gruv-wallhaven-m9e9m1.png}";
+          path = "${~/nixos-custom-iso/users/mathewelhans/wallpapers/gruv-wallhaven-m9e9m1.png}";
         }
       ];
     };
