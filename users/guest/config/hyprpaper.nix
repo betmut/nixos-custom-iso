@@ -8,7 +8,7 @@
       wallpaper = [
         {
           monitor = "eDP-1";
-          path = "${~/nixos-custom-iso/dotfiles/hyprpaper/wallpapers/Kurumi-Ebisuzawa.png}";
+          path = "${../wallpapers/Kurumi-Ebisuzawa.png}";
         }
       ];
     };
