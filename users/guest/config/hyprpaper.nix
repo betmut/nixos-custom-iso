@@ -8,7 +8,7 @@
       wallpaper = [
         {
           monitor = "eDP-1";
-          path = "${../wallpaper/Kurumi-Ebisuzawa.png}";
+          path = "${../wallpapers/Kurumi-Ebisuzawa.png}";
         }
       ];
     };
