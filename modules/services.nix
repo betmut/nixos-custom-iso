@@ -7,8 +7,20 @@
     thermald.enable = true;
 
     #Enable the OpenSSH Daemon
-    openssh.enable = false;
+    openssh = {
+      enable = false;
+      ports = [ 22 ];
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        PermitRootLogin = "no";
+        AllowUsers = [ "myUser" ];
+      };
+    };
     
+    #Enable fail2ban
+    services.fail2ban.enable = if (openssh.enable == true) then true else false;
+
     #enable warp daemons
     cloudflare-warp.enable = true;
       
