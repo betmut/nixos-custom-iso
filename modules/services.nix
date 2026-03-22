@@ -9,6 +9,16 @@
     #blueman
     blueman.enable = true;
 
+    #transmission
+    transmission = {
+      enable = true;
+      package = pkgs.transmission_4;
+      settings = {
+        #config.services.transmission.home </var/lib/transmission>
+        download-dir = "${config.services.transmission.home}/Downloads";
+      };
+    };
+
     #Enable the OpenSSH Daemon
     openssh = {
       enable = false;
