@@ -48,5 +48,13 @@
     };
     efi.canTouchEfiVariables = true;
   };
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware = {
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    facetimehd.enable = true;
+    enableRedistributableFirmware = true;
+  };
 }

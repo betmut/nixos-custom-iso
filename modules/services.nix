@@ -6,6 +6,9 @@
     #thermald
     thermald.enable = true;
 
+    #blueman
+    blueman.enable = true;
+
     #Enable the OpenSSH Daemon
     openssh = {
       enable = false;

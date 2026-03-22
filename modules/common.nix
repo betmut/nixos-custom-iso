@@ -9,7 +9,6 @@
         cloudflare-warp
         tmux 
         tree
-        blueman
         git 
         vim 
         pciutils # Useful for 'lspci'

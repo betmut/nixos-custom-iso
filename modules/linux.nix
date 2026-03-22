@@ -15,10 +15,6 @@
     #    enable = true;
     #    enableSSHSupport = true;
     #};
-   
-    #Enable facetimehd
-    hardware.facetimehd.enable = true;
-    hardware.enableRedistributableFirmware = true;
     
     # Allow proprietary software (Required for Broadcom)
     nixpkgs.config = {
