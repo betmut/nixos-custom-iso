@@ -19,7 +19,7 @@
     };
     
     #Enable fail2ban
-    services.fail2ban.enable = if (openssh.enable == true) then true else false;
+    fail2ban.enable = if (openssh.enable == true) then true else false;
 
     #enable warp daemons
     cloudflare-warp.enable = true;
