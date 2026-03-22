@@ -1,6 +1,6 @@
 {config, pkgs, inputs, lib, ... }: {
   
-  services = {
+  services = rec {
     logind.settings.Login.HandlePowerKey = "ignore";
 
     #thermald
