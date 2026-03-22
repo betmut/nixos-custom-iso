@@ -38,8 +38,8 @@
     };
 
     networking.firewall = {
-      enable = false;
-      allowedTCPPorts =  [22];
+      enable = true;
+      allowedTCPPorts =  [ ]; #22 9091
     #    allowedUDPPorts = [];
     };
     

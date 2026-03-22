@@ -39,6 +39,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: 
@@ -103,6 +107,7 @@
           };
         })
         inputs.stylix.nixosModules.stylix
+        inputs.agenix.nixosModules.default
         ./configuration.nix
         ./stylix.nix
         ./hardware-configuration.nix

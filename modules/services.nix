@@ -1,5 +1,9 @@
 {config, pkgs, inputs, lib, ... }: {
-  
+
+  #age.secrets.transmission-rpc-whitelist = {
+  #  file = ../secrets/transmission-rpc-whitelist.age;
+  #};
+
   services = rec {
     logind.settings.Login.HandlePowerKey = "ignore";
 
@@ -13,9 +17,14 @@
     transmission = {
       enable = true;
       package = pkgs.transmission_4;
+      openRPCPort = true;
       settings = {
         #config.services.transmission.home </var/lib/transmission>
         download-dir = "${config.services.transmission.home}/Downloads";
+ 
+        rpc-port = 9091;
+        rpc-bind-address = "127.0.0.1";
+        rpc-whitelist = "127.0.0.1"; #Whitelist your remote machine
       };
     };
 
