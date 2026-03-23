@@ -30,7 +30,7 @@
     eog
     zotero
     evince
-
+    vlc
     mgba
     warzone2100
   ];
