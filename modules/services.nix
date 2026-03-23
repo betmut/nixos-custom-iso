@@ -30,7 +30,7 @@
 
     #Enable the OpenSSH Daemon
     openssh = {
-      enable = false;
+      enable = true;
       ports = [ 22 ];
       settings = {
         PasswordAuthentication = false;
