@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       general = {
-        lock_cmd = "pidof hyprlock || hyprlock"; # avoids starting multiple instances
+        lock_cmd = "hyprlock";
         before_sleep_cmd = "loginctl lock-session";    # lock before suspend
         after_sleep_cmd = "hyprctl dispatch dpms on";  # turn on screen after wake
       };
