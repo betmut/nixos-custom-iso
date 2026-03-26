@@ -5,6 +5,22 @@
   #};
 
   services = rec {
+    #enable X11
+    xserver = {
+      enable = true;
+      #Configure keymap in X11
+      xkb = {
+        layout = "us";
+      };
+      windowManager.xmonad = {
+        enable = true;
+        enableContribAndExtras = true; # Gives you extra layout and status bar tools
+        extraPackages = haskellPackages: [
+          haskellPackages.xmobar
+        ];
+      };
+    };
+
     logind.settings.Login.HandlePowerKey = "ignore";
 
     #thermald

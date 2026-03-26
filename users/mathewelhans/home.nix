@@ -41,8 +41,6 @@
 
   #.config files
   xdg.configFile = {
-    "hypr/hyprland.conf".source = ../../dotfiles/hyprland/hyprland.conf;
-
   
     "kitty/kitty.conf".source = ../../dotfiles/kitty/kitty.conf;
     "kitty/gruvbox-kitty.conf".source = ../../dotfiles/kitty/gruvbox-kitty.conf;

@@ -112,7 +112,7 @@
         ./stylix.nix
         ./hardware-configuration.nix
         ./filesystems.nix
-        ./desktop-environment/de-configuration.nix
+        ./modules/display-manager.nix
       ];
     }; 
 
