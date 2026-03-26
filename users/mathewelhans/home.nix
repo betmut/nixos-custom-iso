@@ -41,6 +41,8 @@
 
   #.config files
   xdg.configFile = {
+    "xmonad/xmonad.hs".source = ./../dotfiles/xmonad/xmonad.hs;
+    "xmonad/xmobarrc".source = ./../dotfiles/xmonad/xmobarrc;
   
     "kitty/kitty.conf".source = ../../dotfiles/kitty/kitty.conf;
     "kitty/gruvbox-kitty.conf".source = ../../dotfiles/kitty/gruvbox-kitty.conf;
