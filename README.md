@@ -1,6 +1,9 @@
 ## My NixOS Configurations
 This repository contains my NixOS configurations. I use [Hyprland](https://github.com/hyprwm/hyprland) as Tilling Window Manager, [Waybar](https://github.com/alexays/waybar) as status bar. 
 
+## Motivation
+
+
 ## Screenshot
 ![Example image](./screenshot.png)
 
@@ -107,3 +110,4 @@ This repository contains my NixOS configurations. I use [Hyprland](https://githu
 ```
 
 ## Get Started
+Using my configurations is easy, just clone the repository
