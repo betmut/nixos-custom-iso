@@ -8,7 +8,8 @@
     ./config/zsh.nix
   ];
   home.stateVersion = "25.11";
-  
+  gtk.gtk4.theme = config.gtk.theme;
+
   #Packages
   home.packages = with pkgs; [
     gnome-font-viewer
@@ -24,7 +25,7 @@
     spotify
     playerctl
     obsidian
-    rstudio
+    #rstudio
     discord
     zoom-us
     eog
@@ -50,5 +51,6 @@
     "yazi/theme.toml".source = ../../dotfiles/yazi/theme.toml;
     "yazi/flavors".source  = ../../dotfiles/yazi/flavors;
   };
+  
   
 }

@@ -1,4 +1,4 @@
-{pkgs, lib, ... }: {
+{config, pkgs, lib, ... }: {
 
   imports = [
     ./config/vim.nix
@@ -8,6 +8,8 @@
 
   ];
   home.stateVersion = "25.11";
+  gtk.gtk4.theme = config.gtk.theme;
+
   
   #Packages
   home.packages = with pkgs; [
