@@ -19,7 +19,6 @@
       listenAddr = "127.0.0.1";
       package = pkgs.rstudioServerWrapper.override { 
         packages = with pkgs.rPackages; [ 
-          ggplot2
           tidyverse 
         ]; 
       };
