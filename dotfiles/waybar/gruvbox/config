@@ -76,11 +76,11 @@
 
   "network": {
     	"interval": 1,
-        "format-wifi": "󰒢  {essid}",
+        "format-wifi": "󰒢  Connected",
         "format-ethernet": "󰈀  {ifname}",
         "format-linked": "󰒢 {essid} (No IP)",
         "format-disconnected": "󰞃 Disconnected",
-        "format-alt": "{ifname} ({ipaddr})",
+        "format-alt": "{essid} ({ipaddr})",
         "tooltip": true,
         "tooltip-format": "signal strength: {signalStrength} | down speed: {bandwidthDownBits}, up speed: {bandwidthUpBits}"
   },
