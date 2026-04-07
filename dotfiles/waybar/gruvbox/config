@@ -80,9 +80,9 @@
         "format-ethernet": "󰈀  {ifname}",
         "format-linked": "󰒢 {essid} (No IP)",
         "format-disconnected": "󰞃 Disconnected",
-        "format-alt": "{essid} ({ipaddr})",
+        "format-alt": "{essid} ({ifname})",
         "tooltip": true,
-        "tooltip-format": "signal strength: {signalStrength} | down speed: {bandwidthDownBits}, up speed: {bandwidthUpBits}"
+        "tooltip-format": "IP address : {ipaddr} | signal strength: {signalStrength} | down speed: {bandwidthDownBits}, up speed: {bandwidthUpBits}"
   },
 
   "pulseaudio": {
