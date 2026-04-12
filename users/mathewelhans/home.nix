@@ -25,7 +25,7 @@
     spotify
     playerctl
     obsidian
-    #rstudio
+    racket
     discord
     zoom-us
     eog

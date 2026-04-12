@@ -17,7 +17,15 @@
         #colorscheme
         jdinhlife.gruvbox
         vscode-icons-team.vscode-icons
-      ]; 
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "vscode-scheme";
+          publisher = "Allen Huang"; 
+          version = "0.4.0";
+          sha256 = "";
+        }
+      ];
+       
       userSettings = {
         #window
         #"window.autoDetectColorScheme" = false;
