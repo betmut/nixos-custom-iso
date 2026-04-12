@@ -19,9 +19,9 @@
         vscode-icons-team.vscode-icons
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
-          name = "vscode-scheme";
-          publisher = "sjhuangx"; 
-          version = "0.4.0";
+          name = "chez-scheme-vscode";
+          publisher = "abhi18av-vscode"; 
+          version = "0.1.4";
           sha256 = "BN+C64YQ2hUw5QMiKvC7PHz3II5lEVVy0Shtt6t3ch8=";
         }
         {
