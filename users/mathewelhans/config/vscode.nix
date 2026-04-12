@@ -24,6 +24,12 @@
           version = "0.4.0";
           sha256 = "BN+C64YQ2hUw5QMiKvC7PHz3II5lEVVy0Shtt6t3ch8=";
         }
+        {
+          name = "magic-racket";
+          publisher = "evzen-wybitul"; 
+          version = "0.8.0";
+          sha256 = "BN+C64YQ2hUw5QMiKvC7PHz3II5lEVVy0Shtt6t3ch8=";
+        }
       ];
        
       userSettings = {
