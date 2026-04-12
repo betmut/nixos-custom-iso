@@ -20,7 +20,7 @@
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "vscode-scheme";
-          publisher = "Allen Huang"; 
+          publisher = "sjhuangx"; 
           version = "0.4.0";
           sha256 = "";
         }
