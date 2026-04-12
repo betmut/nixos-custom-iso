@@ -18,12 +18,12 @@
         jdinhlife.gruvbox
         vscode-icons-team.vscode-icons
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "chez-scheme-vscode";
-          publisher = "abhi18av-vscode"; 
-          version = "0.1.4";
-          sha256 = "Khn97WBM7pC092H+7xKaVzfdgW44l4QRPEN/PL9gLiA=";
-        }
+        #{
+        #  name = "chez-scheme-vscode";
+        #  publisher = "abhi18av-vscode"; 
+        #  version = "0.1.4";
+        #  sha256 = "Khn97WBM7pC092H+7xKaVzfdgW44l4QRPEN/PL9gLiA=";
+        #}
         {
           name = "magic-racket";
           publisher = "evzen-wybitul"; 
