@@ -28,7 +28,7 @@
           name = "magic-racket";
           publisher = "evzen-wybitul"; 
           version = "0.8.0";
-          sha256 = "BN+C64YQ2hUw5QMiKvC7PHz3II5lEVVy0Shtt6t3ch8=";
+          sha256 = "yWmJFLXktsJDEDwHO8ZCXQBTw8j5bOv6TXEOO/V8mZs=";
         }
       ];
        
