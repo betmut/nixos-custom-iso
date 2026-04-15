@@ -2,7 +2,7 @@
   let 
     wallpaper = pkgs.fetchurl {
       url = "https://gruvbox-wallpapers.pages.dev/wallpapers/anime/totoro_bus_stand.png";
-      sha256 = "sha256-v9P4EO3gM39F5YI2o4wK+ZKYAtDC4/9Zo16GrQWct78=";
+      sha256 = "aG+fl1RO/N23hj2e+Oy/8Osbo5CEW68dTDZ2JU1hNfw=";
     };
   in {
   #Hyprpaper config
