@@ -33,6 +33,7 @@
     evince
     vlc
     mgba
+    libreoffice
     warzone2100
   ];
   home.sessionVariables = {
