@@ -17,7 +17,8 @@
         }
         {
           timeout = 600; # 10 minutes
-          on-timeout = "systemctl suspend"; # Go to sleep
+          on-timeout = "brightnessctl -s set 0";
+          on-resume = "brightnessctl -r";
         }
       ];
     };
