@@ -27,7 +27,7 @@
     # Broadcom BCM4360 for MacBook's WiFi module dan zSwap for optimizing memory
     boot = {
         initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod"];
-        initrd.kernelModules = [ "wl" "i915"];
+        initrd.kernelModules = [ "wl" "i915" "lz4"];
         initrd.systemd.enable = true;
         kernelModules = [ "wl" "kvm-intel"];
         kernelParams = [
