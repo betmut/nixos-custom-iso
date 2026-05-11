@@ -15,7 +15,15 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/8d38cd5c-42f5-4dfc-b95a-2125eec46836"; }
-    ];
+  swapDevices =[
+    {
+      device = "/var/lib/swapfile"; 
+      size = 8*1024; # 8 GiB 
+      priority = 10; # Higher number = higher priority
+    }
+    {
+      device = "/dev/disk/by-uuid/8d38cd5c-42f5-4dfc-b95a-2125eec46836";
+      priority = 10; # If priorities match, it balances between them
+    }
+  ];
 }
