@@ -35,6 +35,7 @@
     mgba
     libreoffice
     warzone2100
+    scrcpy
   ];
   home.sessionVariables = {
     GIT_EDITOR = "vim";
