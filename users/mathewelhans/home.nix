@@ -36,6 +36,7 @@
     libreoffice
     warzone2100
     scrcpy
+    android-tools
   ];
   home.sessionVariables = {
     GIT_EDITOR = "vim";
